@@ -21,7 +21,7 @@ int binarySearch(int *a,int arraySize,int key){
     }
 
     return -1;
-
+    // Time Complexity = O(log2N)
 }
 
 int main()
