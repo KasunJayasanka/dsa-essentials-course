@@ -10,6 +10,7 @@ int linear_search(int arr[],int n,int key){
         }
     }
     return -1;
+    //Time Complexity = O(N) ; N=Number of elements in the array
 }
 
 int main()
