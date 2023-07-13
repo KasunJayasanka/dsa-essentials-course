@@ -12,8 +12,10 @@ void reverseArray(int * a,int n){
         s+=1;
         e-=1;
     }
-
+// Time Complexity = O(N) , N=Number of elements in the array
 }
+
+
 int main()
 {
     int a[]={1,2,3,4,5,6,7,8};
