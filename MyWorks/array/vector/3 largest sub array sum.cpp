@@ -3,16 +3,33 @@
 using namespace std;
 
 int maxSumSubarray(vector<int> A) {
-    int maxSubArraySum = 0;  // Initialize with a very small value
-
-    for (int i = 0; i < A.size(); i++) {
-        for (int j = i; j < A.size(); j++) {
-            int subArraySum = 0;
-            for (int k = i; k <= j; k++) {  // Corrected to include the subarray from i to j
-                subArraySum += A[k];
-            }
-            maxSubArraySum = max(maxSubArraySum, subArraySum);
+   bool isNeg = true;
+   int intLargest = INT_MIN;
+   
+   for(int x:A){
+       
+        if(x>0){
+            isNeg=false;
         }
+        
+        intLargest=max(x,intLargest);
     }
-    return maxSubArraySum;
+    
+    if(isNeg){
+        return intLargest;
+    }
+    
+    int cs=0;
+    int ans=0;
+    
+    for(int x:A){
+        cs+=x;
+        if(cs<0){
+           cs=0; 
+        }
+        ans=max(cs,ans);
+    }
+    
+    return ans;
+   
 }
